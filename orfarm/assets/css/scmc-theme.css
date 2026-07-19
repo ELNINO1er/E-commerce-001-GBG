@@ -1,0 +1,176 @@
+/* ============================================================================
+   SCMC — Couche de design « premium cacao » (chargée APRÈS main.css)
+   Améliore visuellement le template Orfarm sans casser sa structure.
+   Palette : brun cacao profond, crème, doré, vert naturel.
+   ========================================================================== */
+:root{
+  --sc-deep:#2E1A10; --sc-cacao:#5A3A22; --sc-soft:#7A4E30;
+  --sc-gold:#C69A4B; --sc-gold-2:#E0B968; --sc-cream:#F8F1E7; --sc-cream-2:#FBF6EE;
+  --sc-green:#5C7A3A;
+  /* Remap des variables du template -> cacao */
+  --tp-heading-primary:#2E1A10; --tp-heading-secondary:#5A3A22;
+  --tp-theme-1:#2E1A10; --tp-theme-4:#2E1A10; --tp-text-1:#C69A4B; --tp-text-5:#C69A4B;
+}
+
+/* ---------- Barres cacao ---------- */
+.header__top.theme-bg-1{ background:linear-gradient(90deg,#2E1A10,#5A3A22)!important; }
+.header__top-left span,.header__top-link a{ color:#f0e2d0!important; }
+.header__top-link a:hover{ color:var(--sc-gold-2)!important; }
+.theme-bg-2{ background:linear-gradient(160deg,#2E1A10,#43281a 60%,#5A3A22)!important; }
+
+/* ---------- Header ---------- */
+#header-sticky{ box-shadow:0 4px 24px rgba(46,26,16,.06); }
+.main-menu ul li > a{ font-weight:600; }
+.main-menu ul li > a:hover{ color:var(--sc-cacao)!important; }
+.header__info-search button,.header__info-user a,.header__info-wishlist a,.header__info-cart button{
+  transition:transform .25s ease;
+}
+.header__info > div:hover button,.header__info > div:hover a{ transform:translateY(-2px); }
+.header__info-cart span{ background:var(--sc-gold)!important; }
+
+/* ---------- Boutons : dégradé cacao -> doré, relief ---------- */
+.tp-btn,.tp-btn-2,.tp-btn-3,.banner-btn,.tp-news-btn,.whight-btn{
+  background:linear-gradient(120deg,var(--sc-cacao),var(--sc-soft))!important;
+  color:#fff!important; border:none!important; letter-spacing:.4px;
+  box-shadow:0 8px 20px rgba(90,58,34,.28); transition:all .3s ease;
+}
+.tp-btn:hover,.tp-btn-2:hover,.tp-btn-3:hover,.banner-btn:hover,.tp-news-btn:hover,.whight-btn:hover{
+  background:linear-gradient(120deg,var(--sc-gold),var(--sc-gold-2))!important;
+  color:#2E1A10!important; transform:translateY(-3px); box-shadow:0 12px 26px rgba(198,154,75,.4);
+}
+.tp-btn-4{ background:linear-gradient(120deg,var(--sc-gold),var(--sc-gold-2))!important; color:#2E1A10!important; }
+
+/* ---------- Titres de section : sur-titre doré + soulignement ---------- */
+.tpsection__sub-title,.section__sub-title{ color:var(--sc-gold)!important; font-weight:700; letter-spacing:2px; }
+.tpsection__title,.section__title{ color:var(--sc-deep)!important; position:relative; display:inline-block; }
+.tpsection__title::after{
+  content:""; display:block; width:70px; height:3px; margin:14px auto 0;
+  background:linear-gradient(90deg,var(--sc-gold),var(--sc-gold-2)); border-radius:3px;
+}
+
+/* ============ HERO : fond chaleureux + décor ============ */
+.hero-area.tphero__bg{
+  background:radial-gradient(circle at 15% 20%, #fff7ec 0, transparent 45%),
+             radial-gradient(circle at 90% 80%, #f2e3cf 0, transparent 40%),
+             linear-gradient(135deg,#FBF6EE,#F3E7D3)!important;
+  position:relative; overflow:hidden;
+}
+.hero-area.tphero__bg::before{
+  content:""; position:absolute; right:-120px; top:-120px; width:420px; height:420px; border-radius:50%;
+  background:radial-gradient(circle, rgba(198,154,75,.18), transparent 70%);
+}
+.tphero__sub-title{ position:relative; padding-left:42px; }
+.tphero__sub-title::before{
+  content:""; position:absolute; left:0; top:50%; width:32px; height:2px; background:var(--sc-gold);
+}
+.tphero__title{ font-weight:700!important; line-height:1.12!important; }
+.tphero__thumb img{ transition:transform .6s ease; }
+.tphero__thumb img:hover{ transform:scale(1.03) rotate(-1deg); }
+
+/* ============ CARTES PRODUIT ============ */
+.tpproduct{
+  background:#fff; border-radius:18px; padding:14px; border:1px solid rgba(90,58,34,.08);
+  box-shadow:0 10px 26px rgba(46,26,16,.06); transition:all .35s ease; height:100%;
+}
+.tpproduct:hover{ transform:translateY(-8px); box-shadow:0 20px 40px rgba(46,26,16,.16); border-color:rgba(198,154,75,.4); }
+.tpproduct__thumb{ background:var(--sc-cream); border-radius:14px; overflow:hidden; }
+.tpproduct__thumb img{ border-radius:12px; aspect-ratio:1/1; object-fit:cover; transition:transform .5s ease; }
+.tpproduct:hover .tpproduct__thumb img{ transform:scale(1.06); }
+.tpproduct__content-weight a{ color:var(--sc-gold)!important; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:.5px; }
+.tpproduct__title a{ color:var(--sc-deep)!important; font-weight:600; }
+.tpproduct__title a:hover{ color:var(--sc-cacao)!important; }
+.tpproduct__price span{ color:var(--sc-cacao)!important; font-weight:700; font-size:16px; }
+.tpproduct__shopping a{ background:#fff; box-shadow:0 4px 12px rgba(0,0,0,.1); color:var(--sc-cacao); }
+.tpproduct__shopping a:hover{ background:var(--sc-gold); color:#fff; }
+
+/* Grille "marques" (cartes horizontales) */
+.tpbrandproduct__item{
+  background:#fff; border-radius:16px; padding:14px; border:1px solid rgba(90,58,34,.08);
+  box-shadow:0 8px 20px rgba(46,26,16,.05); transition:all .3s ease;
+}
+.tpbrandproduct__item:hover{ transform:translateY(-5px); box-shadow:0 16px 32px rgba(46,26,16,.14); }
+.tpbrandproduct__img img{ width:110px; height:110px; object-fit:cover; border-radius:12px; background:var(--sc-cream); }
+.tpbrandproduct__product-title a{ color:var(--sc-deep)!important; font-weight:600; }
+.tpbrandproduct__product-title a:hover{ color:var(--sc-gold)!important; }
+.tpbrandproduct__contact .tpproduct__price span{ font-size:15px; }
+
+/* ============ À-PROPOS (icônes) ============ */
+.tpabout__border{ background:linear-gradient(180deg,#fff, #FBF6EE); border-radius:24px; padding:40px 20px; box-shadow:0 10px 30px rgba(46,26,16,.05); }
+.tpabout__item{ transition:transform .3s ease; padding:20px; border-radius:16px; }
+.tpabout__item:hover{ transform:translateY(-6px); background:#fff; box-shadow:0 14px 30px rgba(46,26,16,.08); }
+.tpabout__icon{ width:84px;height:84px;margin:0 auto;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,var(--sc-cacao),var(--sc-gold)); }
+.tpabout__icon img{ filter:brightness(0) invert(1); width:40px; }
+.tpabout__title{ color:var(--sc-deep)!important; }
+
+/* ============ SECTION ENGAGEMENT (ex-countdown) ============ */
+.product-coundown-area{ background:linear-gradient(120deg,#2E1A10,#4a2c1a 60%,#5A3A22)!important; border-radius:0; }
+.product-coundown-area .section__sub-title{ color:var(--sc-gold-2)!important; }
+.product-coundown-area .section__title{ color:#fff!important; }
+.product-coundown-area .section__title::after{ margin-left:0; }
+.product-coundown-area p{ color:rgba(255,255,255,.85)!important; }
+.whight-btn.border-btn{ background:transparent!important; border:2px solid var(--sc-gold-2)!important; color:#fff!important; box-shadow:none; }
+.whight-btn.border-btn:hover{ background:var(--sc-gold-2)!important; color:#2E1A10!important; }
+
+/* ============ BANNIÈRES ============ */
+.tpbanner__main-thumb{ position:relative; border-radius:18px; overflow:hidden; min-height:300px;
+  background-size:cover!important; background-position:center!important; margin:8px; }
+.tpbanner__main-thumb::after{ content:""; position:absolute; inset:0;
+  background:linear-gradient(90deg, rgba(46,26,16,.72), rgba(46,26,16,.15)); }
+.tpbanner__main-content{ position:relative; z-index:2; }
+.tpbanner__main__title,.tpbanner__main__sub-title{ color:#fff!important; }
+.tpbanner__main__sub-title{ color:var(--sc-gold-2)!important; }
+
+/* ============ ENGAGEMENTS (ex-témoignages) ============ */
+.testimonial-area{ background-size:cover!important; background-position:center!important; position:relative; }
+.testimonial-area::before{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(46,26,16,.86), rgba(46,26,16,.92)); }
+.testimonial-area .container{ position:relative; z-index:2; }
+.tptestimonial__content2 p{ color:#f4e9da!important; font-size:20px; font-style:italic; }
+.tptestimonial__title{ color:#fff!important; }
+.tptestimonial__avata-position{ color:var(--sc-gold-2)!important; }
+.tptestimonial__avata img{ box-shadow:0 8px 20px rgba(0,0,0,.35); }
+
+/* ============ CONSEILS (ex-blog) ============ */
+.tpblog__item{ background:#fff; border-radius:18px; overflow:hidden; box-shadow:0 10px 26px rgba(46,26,16,.06);
+  transition:all .35s ease; height:100%; }
+.tpblog__item:hover{ transform:translateY(-8px); box-shadow:0 20px 40px rgba(46,26,16,.15); }
+.tpblog__thumb{ overflow:hidden; }
+.tpblog__thumb img{ height:230px; width:100%; object-fit:cover; transition:transform .6s ease; }
+.tpblog__item:hover .tpblog__thumb img{ transform:scale(1.08); }
+.tpblog__wrapper{ padding:22px; }
+.cat-links a{ background:var(--sc-cream); color:var(--sc-cacao)!important; padding:4px 14px; border-radius:20px; font-size:12px; font-weight:600; }
+.tpblog__title a{ color:var(--sc-deep)!important; font-weight:600; }
+.tpblog__title a:hover{ color:var(--sc-gold)!important; }
+
+/* ============ NEWSLETTER ============ */
+.tpsubscribe__item{ background:linear-gradient(120deg,#2E1A10,#5A3A22)!important; border-radius:22px; box-shadow:0 20px 40px rgba(46,26,16,.2); }
+.tpsubscribe__content p{ color:#fff!important; }
+.tpsubscribe__form-btn{ background:linear-gradient(120deg,var(--sc-gold),var(--sc-gold-2))!important; color:#2E1A10!important; }
+
+/* ============ FOOTER ============ */
+.tpfooter__widget-title{ color:var(--sc-gold-2)!important; }
+.tpfooter__widget p, .tpfooter__widget-links a, .tpfooter__widget-time-info span{ color:#e7d7c4!important; }
+.tpfooter__widget-links a:hover{ color:var(--sc-gold-2)!important; padding-left:4px; transition:all .2s ease; }
+.tpfooter__phone-num{ color:var(--sc-gold-2)!important; font-weight:700; }
+.tpfooter__copyright-text{ color:#cbb49c!important; }
+
+/* ============ DIVERS ============ */
+.scroll-top{ background:linear-gradient(135deg,var(--sc-cacao),var(--sc-gold))!important; }
+.tpsearchbar__search-btn,.tpsideinfo__search button{ background:var(--sc-cacao)!important; }
+.tpcart__title{ color:var(--sc-deep); }
+.tpcheck-btn,.tpcart-btn{ border-radius:30px; }
+
+/* WhatsApp flottant */
+.scmc-wa-float{ position:fixed; right:22px; bottom:24px; z-index:999; width:58px; height:58px; border-radius:50%;
+  background:#25D366; color:#fff; display:flex; align-items:center; justify-content:center; font-size:28px;
+  box-shadow:0 10px 24px rgba(0,0,0,.28); transition:transform .25s ease; }
+.scmc-wa-float:hover{ transform:scale(1.1); color:#fff; }
+
+/* Focus accessibilité */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ outline:2px solid var(--sc-gold); outline-offset:2px; }
+@media (prefers-reduced-motion: reduce){ *{ animation-duration:.001ms!important; transition-duration:.001ms!important; } }
+
+/* Apparition douce des sections */
+@media (prefers-reduced-motion: no-preference){
+  .scmc-section,.weekly-product-area,.brand-product,.blog-area,.about-area{ }
+}
